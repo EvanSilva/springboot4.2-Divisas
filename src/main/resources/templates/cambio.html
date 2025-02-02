@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moneda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        select, input, button {
+            margin-top: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<form action="/cambioDivisas" method="POST">
+    <label for="importe">Importe</label>
+    <input type="number" id="importe" name="importe" th:value="${importeConvertido}" step="0.1">
+
+    <label for="moneda-origen">Moneda origen:</label>
+    <select id="moneda-origen" name="moneda-origen">
+        <option value="EUR">Euro</option>
+        <option value="GBP">Libra esterlina</option>
+        <option value="JPY">Yen</option>
+        <option value="USD">Dólar USA</option>
+    </select>
+
+    <label for="moneda-destino">Moneda destino:</label>
+    <select id="moneda-destino" name="moneda-destino">
+        <option value="EUR">Euro</option>
+        <option value="GBP">Libra esterlina</option>
+        <option value="JPY">Yen</option>
+        <option value="USD">Dólar USA</option>
+    </select>
+
+    <button type="submit">Enviar</button>
+</form>
+
+</body>
+</html>
